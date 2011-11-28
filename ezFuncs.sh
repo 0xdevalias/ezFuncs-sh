@@ -21,7 +21,7 @@
 #           The line with whitespace removed
 #   since   v0.1
 ################################################################################
-ezFunc.trim()
+ezFuncs_trim()
 {
   retVal=$(echo "${1}" | sed -e 's/^ *//g;s/ *$//g')
 }
@@ -38,7 +38,7 @@ ezFunc.trim()
 #           The specified slice of substring
 #   since   v0.1
 ################################################################################
-ezFunc.substr()
+ezFuncs_substr()
 {
   retVal=$(echo "${1}" | cut -c${2}-${3})
 }
@@ -54,14 +54,14 @@ ezFunc.substr()
 #       0   The line is not commented
 #   since   v0.1
 ################################################################################
-ezFunc.isCommented()
+ezFuncs_isCommented()
 {
   COMMENT_CHAR="#"
   ISCOMMENTED="0"
 
   # Trim then get first char
-  ezFunc.trim $1
-  ezFunc.substr ${retVal} 1 1
+  ezFuncs_trim $1
+  ezFuncs_substr ${retVal} 1 1
   FIRST_CHAR=${retVal}
 
   if [ "${FIRST_CHAR}" = "${COMMENT_CHAR}" ]
