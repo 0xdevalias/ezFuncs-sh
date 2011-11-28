@@ -56,7 +56,8 @@ ezFunc.substr()
 ################################################################################
 ezFunc.isCommented()
 {
-  ISCOMMENTED=0
+  COMMENT_CHAR="#"
+  ISCOMMENTED="0"
 
   # Trim then get first char
   ezFunc.trim $1
@@ -65,6 +66,6 @@ ezFunc.isCommented()
 
   if [ "${FIRST_CHAR}" = "${COMMENT_CHAR}" ]
   then
-    ISCOMMENTED=1
+    ISCOMMENTED="1"
   fi
 }
