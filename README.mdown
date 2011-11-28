@@ -2,4 +2,4 @@ A small collection of useful shell functions written by @alias1
 
 I will probably add to and expand this as I need more.
 
- &#45; <div class="github"><a href="http://github.com/alias1">alias1</a></div> 
+<div class="github">&#45;<a href="http://github.com/alias1">alias1</a></div> 
