@@ -99,3 +99,25 @@ function ezFuncs_confirmOrExit()
 
   echo Yay, lets continue..
 }
+
+################################################################################
+# confirmOrExit()
+#   desc    Check whether we want to display OK or exit
+#   parm
+#     $1    1 = Exit, 0 = Ok
+#   return
+#     N/A
+#   since   v0.1
+################################################################################
+function ezFuncs_okOrExit()
+{
+  ABORT="${1}"
+
+  if [ "${ABORT}" != "1" ]
+  then
+    echo "    OK!"
+  else
+    echo "    Failed. Aborting.."
+    exit 1
+  fi
+}
