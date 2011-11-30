@@ -69,3 +69,33 @@ ezFuncs_isCommented()
     ISCOMMENTED="1"
   fi
 }
+
+################################################################################
+# confirmOrExit()
+#   desc    Check that the user wants to continue, or exit
+#   parm
+#     N/A
+#   return
+#     N/A
+#   since   v0.1
+################################################################################
+function ezFuncs_confirmOrExit()
+{
+  while true
+  do
+    echo "Should we continue? (Y or N) :"
+    read EZ_CONFIRM
+    case ${EZ_CONFIRM} in
+      y|Y|YES|yes|Yes)
+        break
+      ;;
+      n|N|no|NO|No)
+        echo Aww, we will quit then. Script aborting..
+        exit
+      ;;
+      *) echo Please enter only Y or N
+    esac
+  done
+
+  echo Yay, lets continue..
+}
